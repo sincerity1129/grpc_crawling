@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package crawlerProcess;
+
+service crawlerProcess {
+  rpc crawler (CRAWLERRequest) returns (CRAWLERReply) {}
+
+  rpc crawlerStreamReply (CRAWLERRequest) returns (stream CRAWLERReply) {}
+}
+
+message CRAWLERRequest {
+  string url = 1;
+}
+
+message CRAWLERReply {
+  string data = 1;
+}
